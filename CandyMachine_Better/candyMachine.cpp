@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 
@@ -88,37 +89,39 @@ void printCandy(double cost) { // header of printCandy method.
 
 void userChoice(int selection) { // header of userChoice
 
-	if(selection == 1) {
+	string myStringArray[5];
 
-		cout << "Snikers" << endl;
-	}
+	myStringArray[0] = "Snikers";
+	myStringArray[1] = "M and M's";
+	myStringArray[2] = "Kitkat";
+	myStringArray[3] = "Hersheys";
+	myStringArray[4] = "Sweedish fish";
 
-	else if(selection == 2) {
 
-		cout << "M and M's" << endl;
-	}
 
-	else if(selection == 3) {
+	switch(selection) {
+	case 1: cout << myStringArray[0] << endl;
+	break;
+	case 2: cout << myStringArray[1] << endl;
+	break;
+	case 3: cout << myStringArray[2] << endl;
+	break;
+	case 4: cout << myStringArray[3] << endl;
+	break;
+	case 5: cout << myStringArray[4] << endl;
+	break;
 
-		cout << "Kitkat" << endl;
-	}
 
-	else if(selection == 4) {
+	// This is a default message telling users that the candy they chose is not in candy machine option.
+	// and in this case, users will not be charged for anything.
 
-		cout << "Hersheys" << endl;
-	}
-
-	else if(selection == 5) {
-
-		cout << "Sweedish fish" << endl;
-	}
-	else {
-
-		// This is a default message telling users that the candy they chose is not in candy machine option.
-		// and in this case, users will not be charged for anything.
-
+	default:
 		cout << "There is no candy like that";
+
+
 	}
+
+
 }
 
 /**
