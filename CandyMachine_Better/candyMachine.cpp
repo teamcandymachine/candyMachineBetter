@@ -89,6 +89,7 @@ void printCandy(double cost) { // header of printCandy method.
 
 void userChoice(int selection) { // header of userChoice
 
+	// Store data into an string array.
 	string myStringArray[5];
 
 	myStringArray[0] = "Snikers";
@@ -96,6 +97,9 @@ void userChoice(int selection) { // header of userChoice
 	myStringArray[2] = "Kitkat";
 	myStringArray[3] = "Hersheys";
 	myStringArray[4] = "Sweedish fish";
+
+
+
 
 
 
