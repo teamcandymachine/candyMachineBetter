@@ -52,7 +52,7 @@ void printCandy(double cost) { // header of printCandy method.
 
 		 // Prompt users to insert money.
 
-		cout << "You need to insert more money ";
+		cout << "\nYou need to insert more money ";
 
 		// Read in inserted money.
 
@@ -60,6 +60,9 @@ void printCandy(double cost) { // header of printCandy method.
 
 		if (balance == 0.01 || balance == 0.05 || balance == 0.10 || balance == 0.25 || balance == 1.0) {
 			currentTotal += balance;
+			if (fabs(currentTotal - cost) != 0){ // if remaning total is not zero; fabs pulls the absolute value of a float to not display negative number
+				cout << "\nRemaining total: " << fabs(currentTotal - cost) << endl;
+			}
 		}
 		else {
 			cout << "Invalid input - Insert real money. Try again!!!"
@@ -99,7 +102,7 @@ void userChoice(int selection) { // header of userChoice
 	myStringArray[1] = "M and M's";
 	myStringArray[2] = "Kitkat";
 	myStringArray[3] = "Hersheys";
-	myStringArray[4] = "Sweedish fish";
+	myStringArray[4] = "Sweedish Fish";
 
 	switch (selection) {
 	case 1: cout << myStringArray[0] << endl;
@@ -118,7 +121,7 @@ void userChoice(int selection) { // header of userChoice
 		// and in this case, users will not be charged for anything.
 
 	default:
-		cout << "This machine does not carry this type of candy.";
+		cout << "This machine does not carry that type of candy.";
 	}
 
 }
@@ -139,7 +142,8 @@ int main() { // start of main function.
 							// 2 if they want to buy M and M's
 							// 3 if they want to buy Kitkat
 							// 4 if they want to buy Hersheys
-							// 5 if they want to buy Sweedish fish.
+							// 5 if they want to buy Sweedish Fish
+							// 6 if they want to return.
 
 	cout << "Make A Selection:"
 		"\nEnter 1 for Snikers"
@@ -169,9 +173,7 @@ int main() { // start of main function.
 
 		candyCost = getCandyCost(selection);
 
-		cout << endl; // print a new line
-
-					  // Call the printCandy method.
+		// Call the printCandy method.
 
 		printCandy(candyCost);
 
