@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
+#include <Windows.h>
 using namespace std;
-
 
 /**
 * This is an better program for the candy machine project that still sells 5 kinds of
@@ -42,8 +42,21 @@ double getCandyCost(int selection) {
 	return cost;
 }
 
+void changeConsoleColor(string machineError){
+	HANDLE hstdin = GetStdHandle(STD_INPUT_HANDLE);
+	HANDLE hstdout = GetStdHandle(STD_OUTPUT_HANDLE);
+
+	// Remember how color was when program started
+	CONSOLE_SCREEN_BUFFER_INFO csbi;
+	GetConsoleScreenBufferInfo(hstdout, &csbi);
+
+	SetConsoleTextAttribute(hstdout, 0xEC); // set console color to red
+	cout << machineError << endl; // output whatever is passed into function
+	SetConsoleTextAttribute(hstdout, csbi.wAttributes); // set console color back to normal
+}
 
 void printCandy(double cost) { // header of printCandy method.
+
 	double currentTotal = 0.0; // input: the current money that candy machine is received for user's input.
 	double balance = 0.0; // input: the money users insert.
 	double change = 0.0; // output: the change users can get.
@@ -65,8 +78,7 @@ void printCandy(double cost) { // header of printCandy method.
 			}
 		}
 		else {
-			cout << "Invalid input - Insert real money. Try again!!!"
-				"\nWe only accept nickels, pennies, quarters, dimes and 1 dollar." << endl;
+			changeConsoleColor("\nInvalid input - Insert real money. Try again!!!""\nWe only accept nickels, pennies, quarters, dimes and 1 dollar.");
 		}
 
 		// a condition for the do-while loop, as long as the cost of
@@ -82,7 +94,6 @@ void printCandy(double cost) { // header of printCandy method.
 	cout << "Here is your change " << change << endl;
 
 	// Print out a message telling users that their candy is out.
-
 	cout << "Here is your candy ";
 
 }
@@ -121,7 +132,7 @@ void userChoice(int selection) { // header of userChoice
 		// and in this case, users will not be charged for anything.
 
 	default:
-		cout << "This machine does not carry that type of candy.";
+		changeConsoleColor("\nThis machine does not carry that type of candy.");
 	}
 
 }
@@ -133,7 +144,7 @@ void userChoice(int selection) { // header of userChoice
 
 int main() { // start of main function.
 	char c;
-
+	
 	int selection = 0; // input: user's selection from 1 to 5.
 	double candyCost = 0.0; // additional variable to store cost of the candy.
 
@@ -146,7 +157,7 @@ int main() { // start of main function.
 							// 6 if they want to return.
 
 	cout << "Make A Selection:"
-		"\nEnter 1 for Snikers"
+		"\n1 for Snikers"
 		"\n2 for M and M's"
 		"\n3 for Kitkat"
 		"\n4 for Hersheys"
@@ -186,7 +197,7 @@ int main() { // start of main function.
 		return 0; // end of the program.
 	}
 	else {
-		cout << "This machine does not carry that type of candy.";
+		changeConsoleColor("\nThis machine does not carry that type of candy.");
 	}
 
 	/**
