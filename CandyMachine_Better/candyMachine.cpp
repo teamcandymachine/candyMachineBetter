@@ -102,7 +102,7 @@ void userChoice(int selection) { // header of userChoice
 	myStringArray[1] = "M and M's";
 	myStringArray[2] = "Kitkat";
 	myStringArray[3] = "Hersheys";
-	myStringArray[4] = "Sweedish Fish";
+	myStringArray[4] = "Swedish Fish";
 
 	switch (selection) {
 	case 1: cout << myStringArray[0] << endl;
@@ -142,7 +142,7 @@ int main() { // start of main function.
 							// 2 if they want to buy M and M's
 							// 3 if they want to buy Kitkat
 							// 4 if they want to buy Hersheys
-							// 5 if they want to buy Sweedish Fish
+							// 5 if they want to buy Swedish Fish
 							// 6 if they want to return.
 
 	cout << "Make A Selection:"
@@ -150,7 +150,7 @@ int main() { // start of main function.
 		"\n2 for M and M's"
 		"\n3 for Kitkat"
 		"\n4 for Hersheys"
-		"\n5 for Sweedish Fish"
+		"\n5 for Swedish Fish"
 		"\n6 to Return" << endl << endl;
 
 	// Prompt users to make selection.
