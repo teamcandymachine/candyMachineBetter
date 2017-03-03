@@ -15,6 +15,11 @@ using namespace std;
 * This is a class project in CS04103 - COMPUTER SCI & PROGM (Section 9).
 * @professor Dr. Doug Riecken.
 * @author (Xuan Do)
+* @author (TJ Ferry)
+* @author (Benjamin Ansah)
+* @author (Anne Marie Fernandez)
+* @author (Miten Merliowslly)
+* @author (Adrian Nurse)
 * @version (1.0.1)
 *
 */
