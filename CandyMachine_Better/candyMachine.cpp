@@ -18,7 +18,7 @@ using namespace std;
 * @author (TJ Ferry)
 * @author (Benjamin Ansah)
 * @author (Anne Marie Fernandez)
-* @author (Miten Merliowslly)
+* @author (Miten Merkowsky)
 * @author (Adrian Nurse)
 * @version (1.0.1)
 *
@@ -52,7 +52,7 @@ void printCandy(double cost) { // header of printCandy method.
 
 		 // Prompt users to insert money.
 
-		cout << "\nYou need to insert more money ";
+		cout << "\nYou need to insert more money. ";
 
 		// Read in inserted money.
 
