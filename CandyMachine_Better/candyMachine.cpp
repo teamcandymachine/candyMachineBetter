@@ -31,17 +31,12 @@ using namespace std;
 double getCandyCost(int selection) {
 	double cost = 0.0;
 	if (selection == 1 || selection == 2) {
-
 		cost = 0.5;
-
 	}
 	else if (selection >= 3 && selection <= 5) {
-
 		cost = 1.0;
-
 	}
 	else {
-
 		cost = 0.0;
 	}
 	return cost;
@@ -146,28 +141,29 @@ int main() { // start of main function.
 							// 4 if they want to buy Hersheys
 							// 5 if they want to buy Sweedish fish.
 
-	cout << "Enter 1 for Snikers"
+	cout << "Make A Selection:"
+		"\nEnter 1 for Snikers"
 		"\n2 for M and M's"
 		"\n3 for Kitkat"
 		"\n4 for Hersheys"
-		"\n5 for Sweedish fish"
-		"\n6 to return" << endl << endl;
+		"\n5 for Sweedish Fish"
+		"\n6 to Return" << endl << endl;
 
 	// Prompt users to make selection.
 
-	cout << "Enter selection here: " << endl;
+	cout << "Enter your selection here: " << endl;
 
 	// System in selection
 
 	cin >> selection;
 
 	// A message prints out what the number they selected.
-	cout << "\nYou selected candy number " << selection << endl;
+	cout << "\nYou selected candy number: " << selection << endl;
 
 	// A message prints out telling users the cost of the candy they selected.
 
 	if (selection <= 5) {
-		cout << "Your candy costs " << getCandyCost(selection) << " dollar(s)" << endl;
+		cout << "Your candy costs $" << getCandyCost(selection) << endl;
 
 		// Assign candy cost to variable candyCost.
 
@@ -196,7 +192,7 @@ int main() { // start of main function.
 	* needed so once the user puts in change the window will not close
 	*/
 
-	cout << "\nEnter any character then hit enterKey to exit program\n";
+	cout << "\nEnter any character then hit the enter key to exit the program\n";
 	cin >> c;
 
 	return 0; // end of the program.
