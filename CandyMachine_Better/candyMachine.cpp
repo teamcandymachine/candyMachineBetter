@@ -4,36 +4,38 @@ using namespace std;
 
 
 /**
- * This is an better program for the candy machine project that still sells 5 kinds of
- * candy.
- *
- * However, this program will use Arrays as a tool to store data.
- *
- * Users can only insert a fixed amount of money include nickels, pennies, quarters, dimes
- * and 1 dollar.
- *
- * This is a class project in CS04103 - COMPUTER SCI & PROGM (Section 9).
- * @professor Dr. Doug Riecken.
- * @author (Xuan Do)
- * @version (1.0.1)
- *
- */
+* This is an better program for the candy machine project that still sells 5 kinds of
+* candy.
+*
+* However, this program will use Arrays as a tool to store data.
+*
+* Users can only insert a fixed amount of money include nickels, pennies, quarters, dimes
+* and 1 dollar.
+*
+* This is a class project in CS04103 - COMPUTER SCI & PROGM (Section 9).
+* @professor Dr. Doug Riecken.
+* @author (Xuan Do)
+* @version (1.0.1)
+*
+*/
 
 /*
- * @param selection User's input number
- * @return cost The cost of the candy matching the given selection.
- */
+* @param selection User's input number
+* @return cost The cost of the candy matching the given selection.
+*/
 double getCandyCost(int selection) {
 	double cost = 0.0;
-	if(selection == 1 || selection == 2) {
+	if (selection == 1 || selection == 2) {
 
 		cost = 0.5;
 
-	} else if(selection >= 3 && selection <= 5) {
+	}
+	else if (selection >= 3 && selection <= 5) {
 
 		cost = 1.0;
 
-	} else {
+	}
+	else {
 
 		cost = 0.0;
 	}
@@ -48,7 +50,7 @@ void printCandy(double cost) { // header of printCandy method.
 
 	do { // header if do-while loop
 
-		// Prompt users to insert money.
+		 // Prompt users to insert money.
 
 		cout << "You need to insert more money ";
 
@@ -56,17 +58,18 @@ void printCandy(double cost) { // header of printCandy method.
 
 		cin >> balance;
 
-		if(balance == 0.1 || balance == 0.5 || balance == 0.10 || balance == 0.25 || balance == 1.0) {
+		if (balance == 0.1 || balance == 0.5 || balance == 0.10 || balance == 0.25 || balance == 1.0) {
 			currentTotal += balance;
-		} else {
+		}
+		else {
 			cout << "Invalid input - Insert real money. Try again!!!"
-					"\nWe only accept nickels, pennies, quarters, dimes and 1 dollar." << endl;
+				"\nWe only accept nickels, pennies, quarters, dimes and 1 dollar." << endl;
 		}
 
 		// a condition for the do-while loop, as long as the cost of
 		// the candy is greater than the current total money, candy machine
 		// will keep asking users to insert more money.
-	} while(currentTotal < cost);
+	} while (currentTotal < cost);
 
 	cout << endl;
 	change = currentTotal - cost;
@@ -82,14 +85,14 @@ void printCandy(double cost) { // header of printCandy method.
 }
 
 /*
- * Print name of candy matching the given selection
- * @param selection The number from 1 to 5.
- *
- */
+* Print name of candy matching the given selection
+* @param selection The number from 1 to 5.
+*
+*/
 
 void userChoice(int selection) { // header of userChoice
 
-	// Store data into an string array.
+								 // Store data into an string array.
 	string myStringArray[5];
 
 	myStringArray[0] = "Snikers";
@@ -98,57 +101,52 @@ void userChoice(int selection) { // header of userChoice
 	myStringArray[3] = "Hersheys";
 	myStringArray[4] = "Sweedish fish";
 
-
-
-
-
-
-	switch(selection) {
+	switch (selection) {
 	case 1: cout << myStringArray[0] << endl;
-	break;
+		break;
 	case 2: cout << myStringArray[1] << endl;
-	break;
+		break;
 	case 3: cout << myStringArray[2] << endl;
-	break;
+		break;
 	case 4: cout << myStringArray[3] << endl;
-	break;
+		break;
 	case 5: cout << myStringArray[4] << endl;
-	break;
+		break;
 
 
-	// This is a default message telling users that the candy they chose is not in candy machine option.
-	// and in this case, users will not be charged for anything.
+		// This is a default message telling users that the candy they chose is not in candy machine option.
+		// and in this case, users will not be charged for anything.
 
 	default:
-		cout << "There is no candy like that";
-
-
+		cout << "This machine does not carry this type of candy.";
 	}
-
 
 }
 
 /**
- * This is a driver for testing the operation of the candy machine.
- * Display an instruction and prompt users to enter selection and insert money.
- */
+* This is a driver for testing the operation of the candy machine.
+* Display an instruction and prompt users to enter selection and insert money.
+*/
 
 int main() { // start of main function.
+	char c;
+
 	int selection = 0; // input: user's selection from 1 to 5.
 	double candyCost = 0.0; // additional variable to store cost of the candy.
 
-	// This is an instruction telling users what to select.
-	// Users enter 1 if they want to buy Snikers
-	// 2 if they want to buy M and M's
-	// 3 if they want to buy Kitkat
-	// 4 if they want to buy Hersheys
-	// 5 if they want to buy Sweedish fish.
+							// This is an instruction telling users what to select.
+							// Users enter 1 if they want to buy Snikers
+							// 2 if they want to buy M and M's
+							// 3 if they want to buy Kitkat
+							// 4 if they want to buy Hersheys
+							// 5 if they want to buy Sweedish fish.
 
 	cout << "Enter 1 for Snikers"
-					"\n2 for M and M's"
-					"\n3 for Kitkat"
-					"\n4 for Hersheys"
-					"\n5 for Sweedish fish" << endl << endl;
+		"\n2 for M and M's"
+		"\n3 for Kitkat"
+		"\n4 for Hersheys"
+		"\n5 for Sweedish fish"
+		"\n6 to return" << endl << endl;
 
 	// Prompt users to make selection.
 
@@ -159,48 +157,43 @@ int main() { // start of main function.
 	cin >> selection;
 
 	// A message prints out what the number they selected.
-
 	cout << "\nYou selected candy number " << selection << endl;
 
 	// A message prints out telling users the cost of the candy they selected.
 
-	cout << "Your candy costs " << getCandyCost(selection) << " dollar(s)" << endl;
+	if (selection <= 5) {
+		cout << "Your candy costs " << getCandyCost(selection) << " dollar(s)" << endl;
 
-	// Assign candy cost to variable candyCost.
+		// Assign candy cost to variable candyCost.
 
-	candyCost = getCandyCost(selection);
+		candyCost = getCandyCost(selection);
 
-	cout << endl; // print a new line
+		cout << endl; // print a new line
 
-	// Call the printCandy method.
+					  // Call the printCandy method.
 
-	printCandy(candyCost);
+		printCandy(candyCost);
 
-	// Call the userChoice method.
+		// Call the userChoice method.
 
-	userChoice(selection);
+		userChoice(selection);
+
+	}
+	else if (selection == 6) {
+		return 0; // end of the program.
+	}
+	else {
+		cout << "This machine does not carry that type of candy.";
+	}
+
+	/**
+	* If the program is ran in Visual Studio, this is
+	* needed so once the user puts in change the window will not close
+	*/
+
+	cout << "\nEnter any character then hit enterKey to exit program\n";
+	cin >> c;
 
 	return 0; // end of the program.
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
