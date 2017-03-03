@@ -58,7 +58,7 @@ void printCandy(double cost) { // header of printCandy method.
 
 		cin >> balance;
 
-		if (balance == 0.1 || balance == 0.5 || balance == 0.10 || balance == 0.25 || balance == 1.0) {
+		if (balance == 0.01 || balance == 0.05 || balance == 0.10 || balance == 0.25 || balance == 1.0) {
 			currentTotal += balance;
 		}
 		else {
