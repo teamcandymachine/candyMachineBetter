@@ -185,7 +185,7 @@ int main() { // start of main function.
 
 	// A message prints out telling users the cost of the candy they selected.
 
-	if (selection <= 5) {
+    	if (selection >= 1 && selection <= 5) {
 		cout << "Your candy costs $" << getCandyCost(selection) << endl;
 
 		// Assign candy cost to variable candyCost.
