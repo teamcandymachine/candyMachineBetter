@@ -20,6 +20,7 @@ using namespace std;
 * @author (Anne Marie Fernandez)
 * @author (Miten Merkowsky)
 * @author (Adrian Nurse)
+* @author (Colin Duncan)
 * @version (1.0.1)
 *
 */
