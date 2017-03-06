@@ -79,6 +79,10 @@ void printCandy(double cost) { // header of printCandy method.
 				cout << "\nRemaining total: " << fabs(currentTotal - cost) << endl;
 			}
 		}
+		else if (balance == 6){
+            		cout << "\nReturning your change of: " << currentTotal << endl;
+            		break;
+        	}
 		else {
 			changeConsoleColor("\nInvalid input - Insert real money. Try again!!!""\nWe only accept nickels, pennies, quarters, dimes and 1 dollar.");
 		}
@@ -87,17 +91,19 @@ void printCandy(double cost) { // header of printCandy method.
 		// the candy is greater than the current total money, candy machine
 		// will keep asking users to insert more money.
 	} while (currentTotal < cost);
+	
+	if (balance != 6){
 
-	cout << endl;
-	change = currentTotal - cost;
+		cout << endl;
+		change = currentTotal - cost;
 
-	// Print out a message telling users that the change they will get.
+		// Print out a message telling users that the change they will get.
 
-	cout << "Here is your change " << change << endl;
+		cout << "Here is your change " << change << endl;
 
-	// Print out a message telling users that their candy is out.
-	cout << "Here is your candy ";
-
+		// Print out a message telling users that their candy is out.
+		cout << "Here is your candy ";
+	}
 }
 
 /*
@@ -164,7 +170,7 @@ int main() { // start of main function.
 		"\n3 for Kitkat"
 		"\n4 for Hersheys"
 		"\n5 for Swedish Fish"
-		"\n6 to Return" << endl << endl;
+		"\n6 to Return at any point in the program" << endl << endl;
 
 	// Prompt users to make selection.
 
