@@ -84,7 +84,7 @@ void printCandy(double cost) { // header of printCandy method.
             		break;
         	}
 		else {
-			changeConsoleColor("\nInvalid input - Insert real money. Try again!!!""\nWe only accept nickels, pennies, quarters, dimes and 1 dollar.");
+			changeConsoleColor("\nInvalid input - Insert real money. Try again!!!""\nWe only accept pennies, nickels, quarters, dimes and 1 dollar.");
 		}
 
 		// a condition for the do-while loop, as long as the cost of
