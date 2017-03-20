@@ -22,7 +22,7 @@ using namespace std;
 * @author (Miten Merkowsky)
 * @author (Adrian Nurse)
 * @author (Colin Duncan)
-* @version (1.0.1)
+* @version (1.0.2)
 *
 */
 
